@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RU/ffXPYc8evcOXhDUwajQQO6+nUy65V5epomyTzpdQZ1EQ+Q/JPhjogoTYMWEjQ8xo4e/2KuJQQ32hPSjWi3Q==",
+  "dgSpecHash": "zVj3+ayGrIR+/ZxKh1wuo5+9uhm7BI4ZAXJWNlTZGhi9vFBgr50+5h4i82jzR4htKG+lf/emsNLwALJRwuM6nQ==",
   "success": true,
-  "projectFilePath": "/Users/n90024309/Documents/Bora/myCodes/identityserver/identityserver.csproj",
+  "projectFilePath": "/Users/n90024309/Documents/Bora/myCodes/identityserver/src/identityserver.csproj",
   "expectedPackageFiles": [
     "/Users/n90024309/.nuget/packages/identitymodel/4.3.0/identitymodel.4.3.0.nupkg.sha512",
     "/Users/n90024309/.nuget/packages/identityserver4/4.0.4/identityserver4.4.0.4.nupkg.sha512",

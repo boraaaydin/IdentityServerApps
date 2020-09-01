@@ -491,11 +491,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/n90024309/Documents/Bora/myCodes/identityserver/identityserver.csproj",
+      "projectUniqueName": "/Users/n90024309/Documents/Bora/myCodes/identityserver/src/identityserver.csproj",
       "projectName": "identityserver",
-      "projectPath": "/Users/n90024309/Documents/Bora/myCodes/identityserver/identityserver.csproj",
+      "projectPath": "/Users/n90024309/Documents/Bora/myCodes/identityserver/src/identityserver.csproj",
       "packagesPath": "/Users/n90024309/.nuget/packages/",
-      "outputPath": "/Users/n90024309/Documents/Bora/myCodes/identityserver/obj/",
+      "outputPath": "/Users/n90024309/Documents/Bora/myCodes/identityserver/src/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/n90024309/.nuget/NuGet/NuGet.Config"
