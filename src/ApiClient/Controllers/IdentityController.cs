@@ -8,48 +8,32 @@ namespace MyWebAPI.Controllers
 {
     public class IdentityController : ControllerBase
     {
-        private Newtonsoft.Json.Linq.JObject Token { get; set; }
-        private const string IdServerUrl = "https://localhost:5001";
-        private const string ClientId = "oauthClient";
-        private const string ClientSecret = "SuperSecretPassword";
-        private const string Api = "api1.read";
+        private IdentityService _service;
 
+        public IdentityController(IdentityService service)
+        {
+            _service = service;
+        }
         public async Task<ActionResult> GetDiscoveryDocument()
         {
-            var client = new HttpClient();
-            var disco = await client.GetDiscoveryDocumentAsync(IdServerUrl);
-            if (disco.IsError)
+            var result = await _service.GetDiscoveryDocument();
+            if (result.Status == ServiceStatus.Ok)
             {
-                Console.WriteLine(disco.Error);
-                return Ok(disco.Error);
+                return Ok("Token Endpoint:" + result.Model.TokenEndpoint);
             }
-            //TokenEndPoint = disco.TokenEndpoint;
-            return Ok("Token Endpoint:" + disco.TokenEndpoint);
+            return Ok(result.ErrorMessage);
+
         }
 
-        [Route("/")]
+        [Route("/identity")]
         public async Task<ActionResult> GetDiscoveryDocumentAndToken()
         {
-
-            var client = new HttpClient();
-            var disco = await client.GetDiscoveryDocumentAsync(IdServerUrl);
-            var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            var result = await _service.GetDiscoveryDocumentAndToken();
+            if (result.Status == ServiceStatus.Ok)
             {
-                Address = disco.TokenEndpoint,
-                ClientId = ClientId,
-                ClientSecret = ClientSecret,
-                Scope = Api
-            });
-
-            if (tokenResponse.IsError)
-            {
-                Console.WriteLine(tokenResponse.Error);
-                return Ok("Error:" + tokenResponse.Error);
+                return Ok("Token :" + _service.AccessToken);
             }
-
-            Console.WriteLine(tokenResponse.Json);
-            Token = tokenResponse.Json;
-            return Ok(Token.ToString());
+            return Ok(result.ErrorMessage);
         }
     }
 }

@@ -13,7 +13,8 @@ namespace MyWebAPI.Controllers
     public class DemoController : ControllerBase
     {
         // GET: api/values
-        [Route("api/[controller]")]
+        //[Route("api/[controller]")]
+        [Route("/")]
         public ActionResult<string> Get()
         {
             return "ok";
