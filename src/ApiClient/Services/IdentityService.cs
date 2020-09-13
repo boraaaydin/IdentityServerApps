@@ -5,7 +5,7 @@ using IdentityModel.Client;
 public class IdentityService
 {
     public string AccessToken{ get; set; }
-    private const string IdServerUrl = "https://localhost:5001";
+    private const string IdServerUrl = Common.Constants.Url.IdServerHttps;//"https://localhost:5001";
     private const string ClientId = "oauthClient";
     private const string ClientSecret = "SuperSecretPassword";
     private const string Api = "api1.read";

@@ -45,15 +45,18 @@ internal class Clients
                 AllowedGrantTypes = GrantTypes.Code,
 
                 // where to redirect to after login
-                RedirectUris = { "https://localhost:8001/signin-oidc" },
+                RedirectUris = { Common.Constants.Url.MvcClientHttps+"signin-oidc" },
 
                 // where to redirect to after logout
-                PostLogoutRedirectUris = { "https://localhost:8001/signout-callback-oidc" },
+                PostLogoutRedirectUris = { Common.Constants.Url.MvcClientHttps+"signout-callback-oidc" },
+
+                //AllowOfflineAccess = true,
 
                 AllowedScopes = new List<string>
                 {
                     IdentityServerConstants.StandardScopes.OpenId,
-                    IdentityServerConstants.StandardScopes.Profile
+                    IdentityServerConstants.StandardScopes.Profile,
+                    //"api1"
                 }
             }
         };
