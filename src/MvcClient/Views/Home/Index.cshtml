@@ -3,6 +3,22 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Pages</h1>
+    <ul>
+        <li>
+            <a href="@Url.Action("Claims", "Home")">
+                <span>/Home/Claims</span>
+            </a>
+        </li>      
+        <li>
+            <a href="@Url.Action("SecretPage", "Home")">
+                <span>/Home/SecretPage</span>
+            </a>
+        </li>      
+        <li>
+             <a href="@Url.Action("Logout", "Home")">
+                <span>/Home/Logout</span>
+            </a>
+        </li>
+    </ul>
 </div>

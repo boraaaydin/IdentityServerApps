@@ -78,8 +78,8 @@ namespace MvcClient
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute()
-                    .RequireAuthorization(); //disables anonymous access for the entire application.
+                endpoints.MapDefaultControllerRoute();
+                    //.RequireAuthorization(); //disables anonymous access for the entire application.
             });
         }
     }
