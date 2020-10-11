@@ -58,6 +58,23 @@ internal class Clients
                     IdentityServerConstants.StandardScopes.Profile,
                     //"api1"
                 }
+            },
+            new Client{
+                ClientId="angularClient",
+                AllowedGrantTypes=GrantTypes.Code,
+                RequirePkce = true,
+                RequireClientSecret=false,
+                RedirectUris={ "http://localhost:4200"},
+                PostLogoutRedirectUris={ "http://localhost:4200"},
+                AllowedCorsOrigins={ "http://localhost:4200"},
+                AllowedScopes={
+                    IdentityServerConstants.StandardScopes.OpenId,
+                    IdentityServerConstants.StandardScopes.Profile,
+                    IdentityServerConstants.StandardScopes.Email,
+                    "api1.read"
+                },
+                AllowAccessTokensViaBrowser=true,
+                RequireConsent=false
             }
         };
     }
